@@ -1612,7 +1612,7 @@ class Stripe_official extends PaymentModule
         // Javacript variables needed by Elements
         Media::addJsDef(array(
             'stripe_pk' => $this->getPublishableKey(),
-            'stripe_merchant_country_code' => $merchantCountry->iso_code,
+            'stripe_merchant_country_code' =>  strtoupper($merchantCountry->iso_code),
 
             'stripe_currency' => Tools::strtolower($currency),
             'stripe_amount' => Tools::ps_round($amount, 2),
